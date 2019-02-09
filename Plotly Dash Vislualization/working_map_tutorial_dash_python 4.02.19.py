@@ -11,6 +11,8 @@ import dash_html_components as html
 import dash_table_experiments as dt
 
 import pandas as pd
+# amdbmasd
+
 
 from plotly import graph_objs as go
 
@@ -30,7 +32,7 @@ app.title = 'NYC Wi-Fi Hotspots'
 
 mapbox_access_token = 'pk.eyJ1IjoibWdhdWhhciIsImEiOiJjanJxYXlrbGswMGNtNDRsdzYxY2t3cGNtIn0.t6aWBaAq7bEBP8ugidQLng'
 
-map_data = pd.read_csv("C:/Users/gauha/Desktop/Visualization lessons/NY_wifi_data/NYC_Wi-Fi_Hotspot_Locations.csv")
+map_data = pd.read_csv("C:/Users/gauha/Documents/Learning literature/Visualization lessons/NY_wifi_data/NYC_Wi-Fi_Hotspot_Locations.csv")
 
 # Selecting only required columns
 
