@@ -1,0 +1,35 @@
+[33mcommit 0b4fcdd62a7fc690b43d4ac5560ed921f6f74bb5[m[33m ([m[1;36mHEAD -> [m[1;32mtest[m[33m)[m
+Author: gauhar <gauharmakasheva@gmail.com>
+Date:   Sat Feb 9 23:28:54 2019 +0100
+
+    removing .gitignore.txt file
+
+[1mdiff --git a/.gitignore.txt b/.gitignore.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 3c2e678..0000000[m
+[1m--- a/.gitignore.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-aaa.pic[m
+\ No newline at end of file[m
+[1mdiff --git a/aaa.pic b/aaa.pic[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m
+
+[33mcommit e9e74716ed291da89b1f1c10097e21c5d83303ed[m
+Author: gauhar <gauharmakasheva@gmail.com>
+Date:   Sat Feb 9 23:27:16 2019 +0100
+
+    testing .gitignore.txt file
+
+[1mdiff --git a/.gitignore.txt b/.gitignore.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3c2e678[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32maaa.pic[m
+\ No newline at end of file[m
+[1mdiff --git a/aaa.pic b/aaa.pic[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
