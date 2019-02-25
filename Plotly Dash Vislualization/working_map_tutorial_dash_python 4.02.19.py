@@ -172,16 +172,13 @@ def gen_map(map_data):
     }
 
 
-
 app.layout = html.Div(
 
     html.Div([
 
         html.Div(
 
-            [
-
-                html.H1(children='Maps and Tables',
+            [   html.H1(children='Maps and Tables',
 
                         className='nine columns'),
 
@@ -330,7 +327,6 @@ app.layout = html.Div(
                 html.Div(
 
                     [
-
                         dt.DataTable(
 
                             rows=map_data.to_dict('records'),
@@ -346,7 +342,6 @@ app.layout = html.Div(
                             selected_row_indices=[],
 
                             id='datatable'),
-
                     ],
 
                     style = layout_table,
@@ -367,19 +362,6 @@ app.layout = html.Div(
 
                     ),
 
-                html.Div(
-
-                    [
-
-                        html.P('Developed by Adriano M. Yoshino - ', style = {'display': 'inline'}),
-
-                        html.A('amyoshino@nyu.edu', href = 'mailto:amyoshino@nyu.edu')
-
-                    ], className = "twelve columns",
-
-                       style = {'fontSize': 18, 'padding-top': 20}
-
-                )
 
             ], className="row"
 
