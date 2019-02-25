@@ -9,10 +9,9 @@ import dash_html_components as html
 
 import pandas as pd
 
+import plotly.graph_objs as go
+
 ################################
-
-
-
 
 #imagine this data has been passed from the database
 
@@ -23,30 +22,21 @@ data = data.set_index('name')
 
 #creating app
 
-app = dash.Dash()
+app = dash.Dash(__name__, external_url =  'https://codepen.io/amyoshino/pen/jzXypZ.css')
 
 
 # Boostrap CSS.
 
-app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})  # noqa: E501
-
-
+#creating a layout for the 'Hello world' phrase
 app.layout = html.Div(
-
     html.Div([
-
         html.Div(
-
             [
-                html.H1(children='Hello World',
-
-                        className='two columns'),
-
+                html.H1(children  = 'Hello World',
+                        className = 'two columns'),
                 html.Img(
-
                     src="http://test.fulcrumanalytics.com/wp-content/uploads/2015/10/Fulcrum-logo_840X144.png",
-
-                    className='three columns',
+                    className = 'three columns',
 
                     style={
 
@@ -126,8 +116,8 @@ app.layout = html.Div(
 
                 dcc.Graph(
 
-                    id='example-graph',                    
-                    
+                    id='example-graph',
+
                 )
 
                 ], className= 'six columns'),
@@ -143,7 +133,7 @@ app.layout = html.Div(
 
                 ], className= 'six columns')
 
-            ], 
+            ],
 				className="row")
 
     ], className='ten columns offset-by-one')
@@ -152,15 +142,15 @@ app.layout = html.Div(
 
 @app.callback(
 
-    dash.dependencies.Output('example-graph', 'figure'),
+    dash.dependencies.Output(component_id='example-graph',component_property= 'figure'),
 
-    [dash.dependencies.Input('Cities', 'values')])
+    [dash.dependencies.Input(component_id='Cities', component_property='values')])
 
 def update_image_src(selector):
 		type='bar'
-		
+
 		data0 = []
-		
+
 		for i, subs in enumerate(selector):
 			if 'SF'==subs:
 
@@ -176,9 +166,9 @@ def update_image_src(selector):
 				data_temp.update({'type': type, 'name': 'MT'})
 
 				data0.append(data_temp)
-		
+
 		figure = {
-			
+
 			'data': data0,
 
 			'layout': {

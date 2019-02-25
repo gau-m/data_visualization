@@ -3,41 +3,33 @@
 # -*- coding: utf-8 -*-
 
 import dash
-
 import dash_core_components as dcc
-
 import dash_html_components as html
-
 import dash_table_experiments as dt
-
 import pandas as pd
 # amdbmasd
 
-
 from plotly import graph_objs as go
-
 from plotly.graph_objs import *
-
 from dash.dependencies import  Input, Output
 
 app = dash.Dash(__name__)
-
 server = app.server
-
 app.title = 'NYC Wi-Fi Hotspots'
 
 
 
 # API keys and datasets
 
+path_to_data = "C:/Users/gauha/Documents/Learning literature/Visualization lessons/NY_wifi_data/NYC_Wi-Fi_Hotspot_Locations.csv"
+
 mapbox_access_token = 'pk.eyJ1IjoibWdhdWhhciIsImEiOiJjanJxYXlrbGswMGNtNDRsdzYxY2t3cGNtIn0.t6aWBaAq7bEBP8ugidQLng'
 
-map_data = pd.read_csv("C:/Users/gauha/Documents/Learning literature/Visualization lessons/NY_wifi_data/NYC_Wi-Fi_Hotspot_Locations.csv")
+map_data = pd.read_csv(path_to_data)
 
 # Selecting only required columns
 
 map_data = map_data[["Borough", "Type", "Provider", "Name", "Location", "Latitude", "Longitude"]].drop_duplicates()
-
 
 
 # Boostrap CSS.
@@ -80,8 +72,6 @@ layout_table = dict(
 layout_table['font-size'] = '12'
 
 layout_table['margin-top'] = '20'
-
-
 
 layout_map = dict(
 
@@ -449,8 +439,7 @@ def update_selected_row_indices(type, borough):
 
     return rows
 
-
-
+'''
 @app.callback(
 
     Output('bar-graph', 'figure'),
@@ -458,12 +447,10 @@ def update_selected_row_indices(type, borough):
     [Input('datatable', 'rows'),
 
      Input('datatable', 'selected_row_indices')])
-
+'''
 def update_figure(rows, selected_row_indices):
 
     dff = pd.DataFrame(rows)
-
-
 
     layout = go.Layout(
 
@@ -516,10 +503,20 @@ def update_figure(rows, selected_row_indices):
          )
 
      ])
-
-
-
     return go.Figure(data=data, layout=layout)
+
+'''
+rows = datatable.
+app.callback(update_figure(rows, selected_row_indices))
+
+    Output('bar-graph', 'figure'),
+
+    [Input('datatable', 'rows'),
+
+     Input('datatable', 'selected_row_indices')])
+def update_figure(rows, selected_row_indices):
+'''
+
 
 
 
